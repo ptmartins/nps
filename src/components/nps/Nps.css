@@ -1,4 +1,4 @@
-.btn {
+.nps .btn {
   background-color: #ffe3ed;
   border: 1px solid #df598c;
   border-radius: 3px;
@@ -11,52 +11,56 @@
   transition: all 0.3s ease-in;
 }
 
-.btn:focus,
-.btn:active {
+.nps .btn:focus,
+.nps .btn:active {
   outline: none;
 }
 
-.btn:hover {
+.nps .btn:hover {
   background-color: #df598c;
   color: #ffffff;
 }
 
-.btn--submit {
+.nps .btn--submit {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   opacity: 0.3;
   pointer-events: none;
 }
 
-.btn--submit.active {
+.nps .btn--submit.active {
   -webkit-filter: none;
   filter: none;
   opacity: 1;
   pointer-events: all;
 }
 
-.app {
+.nps {
   border: 1px solid #d2d2d2;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  margin: 0 auto;
+  left: 50%;
   max-width: 640px;
   padding: 1.2rem;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-.app-text {
+.nps-text {
   color: #7a7e7f;
   margin: 2rem 0 3rem;
 }
 
-.app-text span {
+.nps-text span {
   color: #6a6e6f;
   font-weight: 700;
 }
 
-.app-close {
+.nps-close {
   background-color: #fff;
   border: 1px solid #d2d2d2;
   border-radius: 50%;
@@ -123,7 +127,7 @@
   right: 0;
 }
 
-.app-actions {
+.nps-actions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

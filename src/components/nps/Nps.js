@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './Nps.css';
-function Nps() {
+function Nps({show, closeModal}) {
 
     let brand = 'Imagen Go',
         [appState, setAppState] = useState({
@@ -91,12 +91,18 @@ function Nps() {
     };
 
     return (
-        <div className="nps">
-            <button className="app-close"> &times; </button>
+        <div className="nps"
+            style={
+                {
+                    display: show ? 'block' : 'none'
+                }
+            }
+        >
+            <button className="nps-close" onClick={ closeModal }> &times; </button>
             <div className="logo"> 
                 <img src={ logo } alt="IMagen logo" title="Imagen"/>
             </div>
-            <p className="app-text">On a scale from 0-10, how likely are you to recommend <span> { brand } </span> to a friend or colleague?</p>
+            <p className="nps-text">On a scale from 0-10, how likely are you to recommend <span> { brand } </span> to a friend or colleague?</p>
             <div className="score-scale">
                 <span className="help-txt help-txt--low">Now at all likely</span>
                 {
@@ -108,7 +114,7 @@ function Nps() {
                 }
                 <span className="help-txt help-txt--high">Extremely likely</span>
             </div>
-            <div className="app-actions">
+            <div className="nps-actions">
                 <button type="submit" className={toggleSubmitStyles()} onClick={ handleSubmitScore }>Submit</button>
             </div>  
         </div>
