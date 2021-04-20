@@ -28,3 +28,26 @@ body {
   background-color: #333;
   color: #fff;
 }
+
+.dashboard {
+  left: 50%;
+  max-width: 580px;
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.dashboard h1,
+h2 {
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+.dashboard h1 {
+  font-size: 6rem;
+  margin-top: 1.5rem;
+}

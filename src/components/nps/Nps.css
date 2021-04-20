@@ -36,18 +36,23 @@
 }
 
 .nps {
+  background-color: #fff;
   border: 1px solid #d2d2d2;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   left: 50%;
-  max-width: 640px;
   padding: 1.2rem;
   position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  width: 640px;
+}
+
+.nps-scoreDetails.hidden {
+  display: none;
 }
 
 .nps-text {
@@ -135,4 +140,21 @@
   -ms-flex-pack: end;
   justify-content: flex-end;
   margin-top: 3rem;
+}
+
+.thankYou {
+  display: none;
+  margin: 3rem 0;
+}
+
+.thankYou.active {
+  display: block;
+}
+
+.thankYou h2 {
+  font-size: 1.8rem;
+}
+
+.hidden {
+  display: none;
 }

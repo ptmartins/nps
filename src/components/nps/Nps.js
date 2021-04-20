@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './Nps.css';
-function Nps({show, closeModal}) {
+
+function Nps({show, closeModal, update}) {
 
     let brand = 'Imagen Go',
         [appState, setAppState] = useState({
@@ -13,16 +14,19 @@ function Nps({show, closeModal}) {
             date: null,
             score: null
         }),
-      lastID = null;
+        [showThankYou, setShowthankYou] = useState(false),
+        lastID = null;
 
     lastID = fetch('http://localhost:8000/scores')
                 .then(response => response.json())
                 .then(res => {
-                res.forEach((item, index) => {
-                    if(index === res.length - 1) {
-                    lastID = (res[index].id);
-                    }
-                })
+                    res.forEach((item, index) => {
+                        if(index === res.length - 1) {
+                        lastID = (res[index].id);
+                        } else if(res.legth === 0) {
+                            lastID = 0;
+                        }
+                    })
                 });   
 
     useEffect(() => {
@@ -80,35 +84,36 @@ function Nps({show, closeModal}) {
         };
 
         if(appState.activeScore !== null && data.id !== null) {
-        fetch('http://localhost:8000/scores', fetchOptions)
-            .then(() => {
-                setAppState({...appState, activeScore: null});
-                setData({...data, id: null, date: null, score: null})
-            })
-            .catch(err => console.log('Request failed', err))
+            fetch('http://localhost:8000/scores', fetchOptions)
+                .then(() => {
+                    setAppState({...appState, activeScore: null});
+                    setData({...data, id: null, date: null, score: null});
+                    setShowthankYou(true);
+                    setTimeout(() => {
+                        closeModal();
+                        setShowthankYou(false);
+                    }, 2000);
+                })
+                .catch(err => console.log('Request failed', err))
         }
 
+        update();
     };
 
     return (
-        <div className="nps"
-            style={
-                {
-                    display: show ? 'block' : 'none'
-                }
-            }
-        >
-            <button className="nps-close" onClick={ closeModal }> &times; </button>
+        <div className="nps" style={{ display: show ? 'block' : 'none'}}>
+            <button className={ 'nps-close ' + (showThankYou ? 'hidden' : '') } onClick={ closeModal }> &times; </button>
             <div className="logo"> 
-                <img src={ logo } alt="IMagen logo" title="Imagen"/>
+                <img src={ logo } alt="Imagen logo" title="Imagen"/>
             </div>
-            <p className="nps-text">On a scale from 0-10, how likely are you to recommend <span> { brand } </span> to a friend or colleague?</p>
-            <div className="score-scale">
+            <div className={ 'nps-scoreDetails ' + (showThankYou ? 'hidden' : '')}>
+                <p className="nps-text">On a scale from 0-10, how likely are you to recommend <span> { brand } </span> to a friend or colleague?</p>
+                <div className="score-scale">
                 <span className="help-txt help-txt--low">Now at all likely</span>
                 {
                 appState.scores.map((score, index) => 
                 <div className={toggleScoreStyles(index)} key={ index } onClick={ () => { 
-                toggleActive(index);
+                    toggleActive(index);
                 }}> { score } </div>
                 )
                 }
@@ -116,7 +121,11 @@ function Nps({show, closeModal}) {
             </div>
             <div className="nps-actions">
                 <button type="submit" className={toggleSubmitStyles()} onClick={ handleSubmitScore }>Submit</button>
-            </div>  
+            </div> 
+            </div> 
+            <div className={'thankYou ' + (showThankYou ? 'active' : '')}>
+                <h2 className="thankYou-title">Thank you for your feedback!</h2>
+            </div>
         </div>
        
     )
