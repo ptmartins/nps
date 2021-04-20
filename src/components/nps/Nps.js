@@ -12,6 +12,10 @@ function Nps({show, closeModal, update}) {
         [data, setData] = useState({
             id: null,
             date: null,
+            timestamp: null,
+            day: null, 
+            month: null,
+            year: null,
             score: null
         }),
         [showThankYou, setShowthankYou] = useState(false),
@@ -32,8 +36,12 @@ function Nps({show, closeModal, update}) {
     useEffect(() => {
         let now = new Date(),
         _date = now.toGMTString(),
+        _timestamp = now.getTime(),
+        _day = now.getDate(),
+        _month = now.getMonth(),
+        _year = now.getYear(),
         _newID = ++lastID;
-        setData({...data, id: _newID, date: _date, score: appState.activeScore}); 
+        setData({...data, id: _newID, date: _date, timestamp: _timestamp, day: _day, month: _month, year: _year, score: appState.activeScore}); 
     }, [appState]);
 
 

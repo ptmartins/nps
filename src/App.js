@@ -11,6 +11,7 @@ function App() {
   let [showNps, setShowNps] = useState(false),
       [npsScore, setNpsScore] = useState(0),
       [data, setData] = useState(null),
+      [totalSubmissions, setTotalSubmissions] = useState(0),
       [detractors, setDetractors] = useState(0),
       [passives, setPassives] = useState(0),
       [promoters, setPromoters] = useState(0);
@@ -37,10 +38,14 @@ function App() {
    * Perform NPS calculations
    */
   let calcNpsScore = () => {
-    let promoters = null;
-    let detractors = null;
-    let passives = null;
-    let result = null;
+
+    console.log('calc nps');
+
+    let promoters = 0,
+        detractors = 0,
+        passives = 0,
+        totalCasts = 0,
+        result = 0;
 
     if(data !== null) {
       if(data.length > 0) {
@@ -52,12 +57,14 @@ function App() {
           } else {
             passives++;
           }
+          totalCasts++;
         })
 
         result = ((promoters / data.length) * 100) - ((detractors / data.length) * 100);
         setDetractors(detractors);
         setPassives(passives);
         setPromoters(promoters);
+        setTotalSubmissions(totalCasts);
         setNpsScore(result.toFixed(1));
       }  else {
         setNpsScore(0);
@@ -93,7 +100,12 @@ function App() {
             <h1> { `${npsScore} %` } </h1>
           </div>
           <div className="card card--totals">
-            
+            <h4>Total responses:</h4>
+            <h3> { totalSubmissions } </h3>
+          </div>
+          <div className="card card--totals24">
+            <h4>Responses in last 24h:</h4>
+            <h3> -- </h3>
           </div>
           <div className="card card--detractors">
             <FontAwesomeIcon icon={faFrown} />
