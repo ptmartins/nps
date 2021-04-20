@@ -36,6 +36,7 @@ function Nps({show, closeModal, update}) {
         setData({...data, id: _newID, date: _date, score: appState.activeScore}); 
     }, [appState]);
 
+
     /**
      * Toggle active element
      * 
@@ -61,16 +62,16 @@ function Nps({show, closeModal, update}) {
     };
 
 
-  /**
-   * Toggle styles for submit button (if there's a value selected, set it active)
-   */
-  let toggleSubmitStyles = () => {
+    /**
+     * Toggle styles for submit button (if there's a value selected, set it active)
+     */
+    let toggleSubmitStyles = () => {
     if(appState.activeScore !== null) {
-      return ('btn btn--submit active');
+        return ('btn btn--submit active');
     } else {
-      return ('btn btn--submit');
+        return ('btn btn--submit');
     }
-  };
+    };
 
 
     /**

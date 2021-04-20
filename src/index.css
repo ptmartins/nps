@@ -30,8 +30,16 @@ body {
 }
 
 .dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   left: 50%;
-  max-width: 580px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 640px;
   padding: 2rem;
   position: absolute;
   top: 50%;
@@ -50,4 +58,63 @@ h2 {
 .dashboard h1 {
   font-size: 6rem;
   margin-top: 1.5rem;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+}
+
+.card--nps {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.card--totals {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.card--detractors,
+.card--passives,
+.card--promoters {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+
+  width: 31%;
+}
+
+.card--detractors svg,
+.card--passives svg,
+.card--promoters svg {
+  font-size: 3.2rem;
+}
+
+.card--detractors h3,
+.card--passives h3,
+.card--promoters h3 {
+  font-size: 2.5rem;
+}
+
+.card--detractors svg {
+  color: #f8535a;
+}
+
+.card--passives svg {
+  color: #f9c255;
+}
+
+.card--promoters svg {
+  color: #73bc86;
 }
