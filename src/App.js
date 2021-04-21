@@ -11,7 +11,8 @@ function App() {
   let [showNps, setShowNps] = useState(false),
       [npsScore, setNpsScore] = useState(0),
       [data, setData] = useState(null),
-      [totalSubmissions, setTotalSubmissions] = useState(0),
+      [totalResponses, setTotalResponses] = useState(0),
+      [totalLast24, setTotalLast24] = useState(0),
       [detractors, setDetractors] = useState(0),
       [passives, setPassives] = useState(0),
       [promoters, setPromoters] = useState(0);
@@ -39,12 +40,13 @@ function App() {
    */
   let calcNpsScore = () => {
 
-    console.log('calc nps');
-
-    let promoters = 0,
+    let now = new Date().getTime(),
+        last24 = 24*60*60*1000,
+        promoters = 0,
         detractors = 0,
         passives = 0,
-        totalCasts = 0,
+        totalResponses = 0,
+        totalLast24 = 0,
         result = 0;
 
     if(data !== null) {
@@ -57,14 +59,18 @@ function App() {
           } else {
             passives++;
           }
-          totalCasts++;
+          if(data.timestamp >= now - last24) {
+            totalLast24++;
+          }
+          totalResponses++;
         })
 
         result = ((promoters / data.length) * 100) - ((detractors / data.length) * 100);
         setDetractors(detractors);
         setPassives(passives);
         setPromoters(promoters);
-        setTotalSubmissions(totalCasts);
+        setTotalResponses(totalResponses);
+        setTotalLast24(totalLast24);
         setNpsScore(result.toFixed(1));
       }  else {
         setNpsScore(0);
@@ -101,11 +107,11 @@ function App() {
           </div>
           <div className="card card--totals">
             <h4>Total responses:</h4>
-            <h3> { totalSubmissions } </h3>
+            <h3> { totalResponses } </h3>
           </div>
           <div className="card card--totals24">
             <h4>Responses in last 24h:</h4>
-            <h3> -- </h3>
+            <h3> { totalLast24 } </h3>
           </div>
           <div className="card card--detractors">
             <FontAwesomeIcon icon={faFrown} />
