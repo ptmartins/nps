@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './Nps.css';
 
-function Nps({show, closeModal, update}) {
+function Nps({show, closeModal, update, lastNPS}) {
 
     let brand = 'Imagen Go',
         [appState, setAppState] = useState({
@@ -36,13 +36,14 @@ function Nps({show, closeModal, update}) {
     useEffect(() => {
         let months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'],
             now = new Date(),
+            _lastNPS = lastNPS,
             _date = now.toGMTString(),
             _timestamp = now.getTime(),
             _day = now.getDate(),
             _month = months[now.getMonth()],
             _year = now.getFullYear(),
             _newID = ++lastID;
-        setData({...data, id: _newID, date: _date, timestamp: _timestamp, day: _day, month: _month, year: _year, score: appState.activeScore}); 
+        setData({...data, id: _newID, lastNPS: _lastNPS ,date: _date, timestamp: _timestamp, day: _day, month: _month, year: _year, score: appState.activeScore}); 
     }, [appState]);
 
 

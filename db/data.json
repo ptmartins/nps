@@ -2,66 +2,163 @@
   "scores": [
     {
       "id": 1,
-      "date": "Wed, Apr 14 2021 00:00:00 GMT",
-      "timestamp": 1618354800000,
-      "day": 14,
-      "month": 4,
+      "date": "Wed, 21 Apr 2021 17:51:33 GMT",
+      "timestamp": 1619027493790,
+      "day": 21,
+      "month": "Apr.",
       "year": 2021,
-      "score": 10
-    },
-    {
-      "id": 1,
-      "date": "Wed, Apr 16 2021 00:00:00 GMT",
-      "timestamp": 1618531200000,
-      "day": 14,
-      "month": 4,
-      "year": 2021,
-      "score": 10
+      "score": 9,
+      "lastNPS": 0
     },
     {
       "id": 2,
-      "date": "Wed, 21 Apr 2021 07:11:08 GMT",
-      "timestamp": 1618989068989,
+      "date": "Wed, 21 Apr 2021 18:10:40 GMT",
+      "timestamp": 1619028640600,
       "day": 21,
       "month": "Apr.",
       "year": 2021,
-      "score": 10
+      "score": 1,
+      "lastNPS": "100.0"
     },
     {
       "id": 3,
-      "date": "Wed, 21 Apr 2021 07:11:19 GMT",
-      "timestamp": 1618989079305,
+      "date": "Wed, 21 Apr 2021 18:10:54 GMT",
+      "timestamp": 1619028654313,
       "day": 21,
       "month": "Apr.",
       "year": 2021,
-      "score": 2
+      "score": 6,
+      "lastNPS": "0.0"
     },
     {
       "id": 4,
-      "date": "Wed, 21 Apr 2021 07:11:26 GMT",
-      "timestamp": 1618989086863,
+      "date": "Wed, 21 Apr 2021 18:10:58 GMT",
+      "timestamp": 1619028658636,
       "day": 21,
       "month": "Apr.",
       "year": 2021,
-      "score": 7
+      "score": 9,
+      "lastNPS": "-33.3"
     },
     {
       "id": 5,
-      "date": "Wed, 21 Apr 2021 07:11:33 GMT",
-      "timestamp": 1618989093773,
+      "date": "Wed, 21 Apr 2021 18:11:04 GMT",
+      "timestamp": 1619028664955,
       "day": 21,
       "month": "Apr.",
       "year": 2021,
-      "score": 9
+      "score": 9,
+      "lastNPS": "0.0"
     },
     {
       "id": 6,
-      "date": "Wed, 21 Apr 2021 07:11:41 GMT",
-      "timestamp": 1618989101973,
+      "date": "Wed, 21 Apr 2021 18:11:11 GMT",
+      "timestamp": 1619028671074,
       "day": 21,
       "month": "Apr.",
       "year": 2021,
-      "score": 10
+      "score": 10,
+      "lastNPS": "0.0"
+    },
+    {
+      "id": 7,
+      "date": "Wed, 21 Apr 2021 18:11:21 GMT",
+      "timestamp": 1619028681169,
+      "day": 21,
+      "month": "Apr.",
+      "year": 2021,
+      "score": 9,
+      "lastNPS": "33.3"
+    },
+    {
+      "id": 8,
+      "date": "Wed, 21 Apr 2021 18:11:27 GMT",
+      "timestamp": 1619028687593,
+      "day": 21,
+      "month": "Apr.",
+      "year": 2021,
+      "score": 10,
+      "lastNPS": "42.9"
+    },
+    {
+      "id": 9,
+      "date": "Wed, 21 Apr 2021 18:11:33 GMT",
+      "timestamp": 1619028693552,
+      "day": 21,
+      "month": "Apr.",
+      "year": 2021,
+      "score": 10,
+      "lastNPS": "50.0"
+    },
+    {
+      "id": 10,
+      "date": "Wed, 21 Apr 2021 18:11:40 GMT",
+      "timestamp": 1619028700203,
+      "day": 21,
+      "month": "Apr.",
+      "year": 2021,
+      "score": 10,
+      "lastNPS": "55.6"
+    },
+    {
+      "id": 11,
+      "date": "Wed, 21 Apr 2021 18:11:44 GMT",
+      "timestamp": 1619028704963,
+      "day": 21,
+      "month": "Apr.",
+      "year": 2021,
+      "score": 10,
+      "lastNPS": "60.0"
+    },
+    {
+      "id": 12,
+      "date": "Wed, 21 Apr 2021 18:11:49 GMT",
+      "timestamp": 1619028709644,
+      "day": 21,
+      "month": "Apr.",
+      "year": 2021,
+      "score": 10,
+      "lastNPS": "63.6"
+    },
+    {
+      "id": 13,
+      "date": "Wed, 21 Apr 2021 18:11:55 GMT",
+      "timestamp": 1619028715717,
+      "day": 21,
+      "month": "Apr.",
+      "year": 2021,
+      "score": 10,
+      "lastNPS": "66.7"
+    },
+    {
+      "id": 14,
+      "date": "Wed, 21 Apr 2021 18:12:00 GMT",
+      "timestamp": 1619028720838,
+      "day": 21,
+      "month": "Apr.",
+      "year": 2021,
+      "score": 10,
+      "lastNPS": "69.2"
+    },
+    {
+      "id": 15,
+      "date": "Wed, 21 Apr 2021 18:12:08 GMT",
+      "timestamp": 1619028728037,
+      "day": 21,
+      "month": "Apr.",
+      "year": 2021,
+      "score": 10,
+      "lastNPS": "71.4"
+    },
+    {
+      "id": 16,
+      "date": "Wed, 21 Apr 2021 18:12:16 GMT",
+      "timestamp": 1619028736890,
+      "day": 21,
+      "month": "Apr.",
+      "year": 2021,
+      "score": 8,
+      "lastNPS": "73.3"
     }
   ]
 }

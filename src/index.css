@@ -39,7 +39,7 @@ body {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  max-width: 760px;
+  max-width: 860px;
   padding: 2rem;
   position: absolute;
   top: 50%;
@@ -86,9 +86,31 @@ body {
 }
 
 .card--totals,
-.card--totals24 {
+.card--totals24,
+.card--change {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin-bottom: 1.5rem;
-  width: 48%;
+  width: 31%;
+}
+
+.card--totals h3,
+.card--totals24 h3,
+.card--change h3 {
+  margin-top: auto;
+}
+
+.card--change.positive h3 {
+  color: #73bc86;
+}
+
+.card--change.negative h3 {
+  color: #f8535a;
 }
 
 .card--detractors,
